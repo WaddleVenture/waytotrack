@@ -1,3 +1,8 @@
+/* Styles communs */
+
+// Have to modify this in the future so that each pages have their own css
+// Needs one global scss file.
+
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -43,7 +48,6 @@ button {
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
-  background-color: #1a1a1a;
   cursor: pointer;
   transition: border-color 0.25s;
 }
@@ -55,6 +59,7 @@ button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
+/* Styles for white theme */
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;
@@ -66,4 +71,12 @@ button:focus-visible {
   button {
     background-color: #f9f9f9;
   }
+}
+
+/* App.scss */
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
 }
