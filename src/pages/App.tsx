@@ -1,6 +1,10 @@
+import Button from "../components/button";
 import "./App.scss";
 
 // First take on the first page (it should be named something else)
+const handleClick = () => {
+  console.log("It was clicked");
+};
 
 function App() {
   return (
@@ -12,8 +16,8 @@ function App() {
           Track your games, preserve your gaming journey, and uncover new
           adventures with our user-friendly application.
         </p>
-        <button className="primary">Sign Up</button>
-        <button className="white">Learn More</button>
+        <Button label="Sign Up" theme="primary" onClick={handleClick} />
+        <Button label="Learn More" theme="secondary" />
       </div>
     </div>
   );

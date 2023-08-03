@@ -1,0 +1,96 @@
+// Define color variables
+$primary-color: #007bff;
+$primary-hover-color: #206acf;
+$secondary-color: rgba(255, 255, 255, 0.2);
+$hover-color: #646cff;
+$white-theme-bg: #f9f9f9;
+$second-button-hover-bg: #e8f0fd;
+
+// Define variables for border styles
+$border-radius: 8px;
+$border-width: 1px;
+$border-style: solid;
+
+// Mixin for border
+@mixin button-border {
+  border-radius: $border-radius;
+  border: $border-width $border-style transparent;
+}
+
+// Button styles
+.button {
+  @include button-border;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  cursor: pointer;
+  transition: border-color 0.25s;
+
+  &.primary-theme {
+    background-color: $primary-color;
+    color: #fff;
+
+    @media (prefers-color-scheme: light) {
+      &:hover {
+        background-color: $primary-hover-color;
+        box-shadow: 0 0 5px #000;
+      }
+    }
+
+    &:hover {
+      @media (prefers-color-scheme: dark) {
+        background-color: darken(
+          $primary-color,
+          20%
+        ); // Darken the background for dark theme
+        box-shadow: 0 0 5px #000;
+      }
+    }
+  }
+
+  &.secondary-theme {
+    background-color: $secondary-color;
+    color: #fff;
+
+    &:hover {
+      @media (prefers-color-scheme: light) {
+        background-color: $second-button-hover-bg;
+      }
+      background-color: darken($secondary-color, 30%);
+      box-shadow: 0 0 5px $primary-color;
+    }
+  }
+
+  &:hover {
+    border-color: $hover-color;
+  }
+
+  // White theme
+  @media (prefers-color-scheme: light) {
+    background-color: $white-theme-bg;
+    border-color: $primary-color;
+
+    &.primary-theme {
+      background-color: $primary-color;
+      color: #fff;
+    }
+
+    &.secondary-theme {
+      background-color: $secondary-color;
+      color: $primary-color;
+    }
+
+    &:hover {
+      border-color: $hover-color;
+    }
+
+    &.primary-theme:hover {
+      border-color: transparent;
+    }
+
+    &.secondary-theme:hover {
+      border-color: transparent;
+    }
+  }
+}
