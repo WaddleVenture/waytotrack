@@ -1,12 +1,14 @@
+@import "Global";
+
 .header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-
-  color: #fff;
+  color: $white-theme-bg;
   padding: 50px;
+
   @media (prefers-color-scheme: light) {
-    color: #213547;
+    color: $color-dark;
   }
 
   &-left {
@@ -15,18 +17,21 @@
       cursor: pointer;
     }
   }
+
   &-center {
     ul {
       display: flex;
       list-style: none;
       padding: 0;
       margin: 0;
+      gap: 20px;
+
       li {
-        margin-left: 20px;
         cursor: pointer;
         transition: color 0.2s ease;
+
         &:hover {
-          color: #206acf;
+          color: $primary-hover-color;
         }
       }
     }

@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import Button from "./Button";
 import "./Login.scss";
 
+// TODO : something about security -> SQL injections, where to store datas ?
+
 interface LoginProps {
   onLogin: (username: string, password: string) => void;
 }

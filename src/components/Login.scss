@@ -1,9 +1,9 @@
+@import "Global";
+
 .login-container {
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  height: 100vh;
-  padding-left: 50px;
 }
 
 .login-form {
@@ -19,9 +19,9 @@
 .login-form input {
   padding: 8px;
   border: none;
-  background-color: #111d2f;
+  background-color: $field-color-dark;
 
   @media (prefers-color-scheme: light) {
-    background-color: #f0f0f4;
+    background-color: $field-color-white;
   }
 }
