@@ -1,27 +1,32 @@
-# React + TypeScript + Vite
+# waytotrack
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+waytotrack is an application to track video games, allowing you to keep a record of the games you have played, completed, and other associated details.
 
-Currently, two official plugins are available:
+## Technologies Used
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- React
+- TypeScript
+- SCSS
 
-## Expanding the ESLint configuration
+## Roadmap
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- Make all components
+- Pages
+- Mock routes
+- Backend
+- Test it
 
-- Configure the top-level `parserOptions` property like this:
+## Contribution
 
-```js
-   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-   },
-```
+Contributions are not welcome at this state of the project.
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+## Commits convention
+
+[+] Add
+[-] Delete
+[*] Improve
+[~] Correct a bug
+
+## License
+
+This project is licensed under the [MIT License](LICENSE). You are free to use, modify, and distribute the code in this repository.

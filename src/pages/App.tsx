@@ -1,15 +1,27 @@
 import Button from "../components/Button";
 import Header from "../components/Header";
+import Login from "../components/Login";
 import "./App.scss";
 
 // First take on the first page (it should be named something else)
 // Needs to change tsx and scss
+
+// A place to test all of my components
 
 const handleClick = () => {
   console.log("It was clicked");
 };
 
 function App() {
+  const handleLogin = (username: string, password: string) => {
+    console.log(
+      "Logging in with username:",
+      username,
+      "and password:",
+      password
+    );
+  };
+
   return (
     <div className="app-container">
       <Header
@@ -29,6 +41,7 @@ function App() {
             <Button label="Sign Up" theme="primary" onClick={handleClick} />
             <Button label="Learn More" theme="secondary" />
           </div>
+          <Login onLogin={handleLogin} />
         </div>
       </div>
     </div>

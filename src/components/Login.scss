@@ -1,0 +1,27 @@
+.login-container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  height: 100vh;
+  padding-left: 50px;
+}
+
+.login-form {
+  width: 300px;
+  display: grid;
+  grid-gap: 20px;
+}
+
+.login-form div {
+  display: grid;
+}
+
+.login-form input {
+  padding: 8px;
+  border: none;
+  background-color: #111d2f;
+
+  @media (prefers-color-scheme: light) {
+    background-color: #f0f0f4;
+  }
+}
