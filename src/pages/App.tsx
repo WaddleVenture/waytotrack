@@ -1,4 +1,5 @@
 import Button from "../components/Button";
+import Card from "../components/Card";
 import Header from "../components/Header";
 import Login from "../components/Login";
 import "./App.scss";
@@ -42,6 +43,15 @@ function App() {
             <Button label="Learn More" theme="secondary" />
           </div>
           <Login onLogin={handleLogin} />
+
+          <Card
+            image="https://imgr.gameblog.fr/images/jeux/26633/OuterWilds_PS4_Jaquette_001.jpg?imgeng=/cmpr_10/w_230/m_letterbox&ver=1"
+            title="Outer Wilds"
+            subtitle="Mobius Digital"
+            action="+"
+            onClickCard={() => console.log("Card clicked!")}
+            onAction={() => console.log("Action clicked!")}
+          />
         </div>
       </div>
     </div>
