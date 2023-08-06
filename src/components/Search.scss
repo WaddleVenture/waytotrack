@@ -1,0 +1,11 @@
+@import "Global";
+
+.search-form input {
+  padding: 8px;
+  border: solid $white-theme-bg 1px;
+  background-color: transparent;
+
+  @media (prefers-color-scheme: light) {
+    background-color: $field-color-white;
+  }
+}

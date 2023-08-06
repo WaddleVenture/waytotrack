@@ -2,6 +2,7 @@ import Button from "../components/Button";
 import Card from "../components/Card";
 import Header from "../components/Header";
 import Login from "../components/Login";
+import Search from "../components/Search";
 import "./App.scss";
 
 // First take on the first page (it should be named something else)
@@ -21,6 +22,10 @@ function App() {
       "and password:",
       password
     );
+  };
+
+  const handleSearch = (search: string) => {
+    console.log("Search : ", search);
   };
 
   return (
@@ -53,6 +58,7 @@ function App() {
             onAction={() => console.log("Action clicked!")}
           />
         </div>
+        <Search onSearch={handleSearch} />
       </div>
     </div>
   );
