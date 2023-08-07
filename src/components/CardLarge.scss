@@ -1,0 +1,77 @@
+@import "Global"; // Import SCSS variables if needed
+
+.card-large-container {
+  display: flex;
+  width: 420px;
+  height: 260px;
+  padding: 16px;
+  gap: 0px 23px;
+  background-color: $field-color-dark;
+  border-radius: 8px;
+  overflow: hidden;
+  cursor: pointer;
+
+  &:hover {
+    background-color: $color-dark;
+  }
+
+  @media (prefers-color-scheme: light) {
+    background-color: $field-color-white;
+
+    &:hover {
+      background-color: $second-button-hover-bg;
+    }
+  }
+
+  .image {
+    width: 160px;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 6px;
+  }
+
+  .card-large-text {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    overflow: hidden;
+    height: 100%;
+
+    h1,
+    p {
+      margin: 0;
+      font-size: 18px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      text-align: left;
+    }
+
+    h1 {
+      flex-shrink: 0;
+      font-weight: bold;
+      margin-bottom: 8px;
+    }
+
+    p {
+      font-size: 14px;
+      white-space: pre-wrap;
+      word-wrap: break-word;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  }
+
+  .card-large-action {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+  }
+
+  .card-large-action span {
+    cursor: pointer;
+    &:hover {
+      color: $green;
+    }
+  }
+}

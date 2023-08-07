@@ -1,5 +1,6 @@
 import Button from "../components/Button";
 import Card from "../components/Card";
+import CardLarge from "../components/CardLarge";
 import Header from "../components/Header";
 import Login from "../components/Login";
 import Search from "../components/Search";
@@ -59,6 +60,14 @@ function App() {
           />
         </div>
         <Search onSearch={handleSearch} />
+        <CardLarge
+          image="https://imgr.gameblog.fr/images/jeux/26633/OuterWilds_PS4_Jaquette_001.jpg?imgeng=/cmpr_10/w_230/m_letterbox&ver=1"
+          title="Outer Wilds"
+          action="+"
+          onClickCard={() => console.log("Card Large clicked!")}
+          onAction={() => console.log("Action Large clicked!")}
+          description="Named Game of the Year 2019 by Giant Bomb, Polygon, Eurogamer, and The Guardian, Outer Wilds is a critically-acclaimed and award-winning open world mystery about a solar system trapped in an endless time loop. "
+        />
       </div>
     </div>
   );
