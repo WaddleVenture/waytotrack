@@ -1,6 +1,7 @@
 import Button from "../components/Button";
 import Card from "../components/Card";
 import CardLarge from "../components/CardLarge";
+import Carousel from "../components/Carousel";
 import Header from "../components/Header";
 import Login from "../components/Login";
 import Search from "../components/Search";
@@ -14,6 +15,23 @@ import "./App.scss";
 const handleClick = () => {
   console.log("It was clicked");
 };
+
+const generateCardsData = (numCards: number) => {
+  const cardsData = [];
+
+  for (let i = 1; i <= numCards; i++) {
+    cardsData.push({
+      image: `https://imgr.gameblog.fr/images/jeux/26633/OuterWilds_PS4_Jaquette_001.jpg?imgeng=/cmpr_10/w_230/m_letterbox&ver=1`,
+      title: `Card ${i}`,
+      description: `Description of Card ${i}`,
+    });
+  }
+
+  return cardsData;
+};
+
+const numCards = 20;
+const cardsData = generateCardsData(numCards);
 
 function App() {
   const handleLogin = (username: string, password: string) => {
@@ -68,6 +86,7 @@ function App() {
           onAction={() => console.log("Action Large clicked!")}
           description="Named Game of the Year 2019 by Giant Bomb, Polygon, Eurogamer, and The Guardian, Outer Wilds is a critically-acclaimed and award-winning open world mystery about a solar system trapped in an endless time loop. "
         />
+        <Carousel cards={cardsData} />
       </div>
     </div>
   );

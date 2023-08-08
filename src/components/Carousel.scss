@@ -1,0 +1,46 @@
+@import "Global";
+
+// TODO : transition animation ?
+
+.carousel {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
+
+  .cards-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .previous,
+  .next {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    color: $secondary-color;
+    transition: color 0.3s;
+
+    &:hover {
+      color: $arrow;
+    }
+
+    @media (prefers-color-scheme: light) {
+      color: $arrow;
+      &:hover {
+        color: $hover-color;
+      }
+    }
+  }
+}
