@@ -1,13 +1,13 @@
 import React from "react";
 import "./Card.scss";
+import Dropdown from "./Dropdown";
 
 type CardProps = {
   image?: string;
   title?: string;
   subtitle?: string;
   onClickCard?: () => void;
-  onAction?: () => void;
-  action?: "+" | "-";
+  action?: boolean;
 };
 
 const Card: React.FC<CardProps> = ({
@@ -15,14 +15,10 @@ const Card: React.FC<CardProps> = ({
   title,
   subtitle,
   onClickCard,
-  onAction,
   action,
 }) => {
-  const handleActionClick = (event: React.MouseEvent) => {
-    event.stopPropagation(); // Prevent the click event from bubbling up to the parent elements
-    if (onAction) {
-      onAction();
-    }
+  const handleDropdownSelect = (selectedOption: string) => {
+    console.log("Selected option:", selectedOption);
   };
 
   return (
@@ -33,7 +29,18 @@ const Card: React.FC<CardProps> = ({
         {subtitle && (
           <div className="subtitle-container">
             <h2>{subtitle}</h2>
-            {action && <span onClick={handleActionClick}>{action}</span>}
+            {action && (
+              <Dropdown
+                options={[
+                  "Playing",
+                  "Completed",
+                  "On hold",
+                  "Dropped",
+                  "Plan to play",
+                ]}
+                onSelectOption={handleDropdownSelect}
+              />
+            )}
           </div>
         )}
       </div>

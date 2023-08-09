@@ -23,7 +23,8 @@ const generateCardsData = (numCards: number) => {
     cardsData.push({
       image: `https://imgr.gameblog.fr/images/jeux/26633/OuterWilds_PS4_Jaquette_001.jpg?imgeng=/cmpr_10/w_230/m_letterbox&ver=1`,
       title: `Card ${i}`,
-      description: `Description of Card ${i}`,
+      subtitle: `Description of Card ${i}`,
+      action: true,
     });
   }
 
@@ -72,9 +73,8 @@ function App() {
             image="https://imgr.gameblog.fr/images/jeux/26633/OuterWilds_PS4_Jaquette_001.jpg?imgeng=/cmpr_10/w_230/m_letterbox&ver=1"
             title="Outer Wilds"
             subtitle="Mobius Digital"
-            action="+"
+            action={true}
             onClickCard={() => console.log("Card clicked!")}
-            onAction={() => console.log("Action clicked!")}
           />
         </div>
         <Search onSearch={handleSearch} />

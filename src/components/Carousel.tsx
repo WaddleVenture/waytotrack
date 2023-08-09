@@ -7,8 +7,7 @@ type CardProps = {
   title?: string;
   subtitle?: string;
   onClickCard?: () => void;
-  onAction?: () => void;
-  action?: "+" | "-";
+  action?: boolean;
 };
 
 type CarouselProps = {
