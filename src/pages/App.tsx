@@ -5,6 +5,7 @@ import Carousel from "../components/Carousel";
 import Header from "../components/Header";
 import Login from "../components/Login";
 import Search from "../components/Search";
+import Stat from "../components/Stat";
 import "./App.scss";
 
 // First take on the first page (it should be named something else)
@@ -87,6 +88,7 @@ function App() {
           description="Named Game of the Year 2019 by Giant Bomb, Polygon, Eurogamer, and The Guardian, Outer Wilds is a critically-acclaimed and award-winning open world mystery about a solar system trapped in an endless time loop. "
         />
         <Carousel cards={cardsData} />
+        <Stat category="test" number={13} />
       </div>
     </div>
   );
