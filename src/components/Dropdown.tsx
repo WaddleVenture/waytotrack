@@ -10,13 +10,11 @@ const Dropdown: React.FC<DropdownProps> = ({ options, onSelectOption }) => {
   const [isOpen, setIsOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement | null>(null);
 
-  const toggleDropdown = (event: React.MouseEvent) => {
-    event.stopPropagation(); // Prevent click event from reaching parent elements
+  const toggleDropdown = () => {
     setIsOpen(!isOpen);
   };
 
-  const handleOptionSelect = (option: string, event: React.MouseEvent) => {
-    event.stopPropagation();
+  const handleOptionSelect = (option: string) => {
     onSelectOption(option);
     setIsOpen(false);
   };
@@ -46,10 +44,7 @@ const Dropdown: React.FC<DropdownProps> = ({ options, onSelectOption }) => {
       {isOpen && (
         <ul className="dropdown-menu-list">
           {options.map((option, index) => (
-            <li
-              key={index}
-              onClick={(event) => handleOptionSelect(option, event)}
-            >
+            <li key={index} onClick={() => handleOptionSelect(option)}>
               {option}
             </li>
           ))}
