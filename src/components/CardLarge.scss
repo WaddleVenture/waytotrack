@@ -62,13 +62,13 @@
     }
   }
 
-  .card-large-action {
+  .card-large-dropdown {
     display: flex;
     justify-content: flex-end;
     align-items: flex-end;
   }
 
-  .card-large-action span {
+  .card-large-dropdown span {
     cursor: pointer;
     &:hover {
       color: $green;

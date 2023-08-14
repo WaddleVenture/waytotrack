@@ -1,5 +1,6 @@
 import React from "react";
 import "./CardLarge.scss";
+import Dropdown from "./Dropdown";
 
 type CardLargeProps = {
   image?: string;
@@ -15,14 +16,10 @@ const CardLarge: React.FC<CardLargeProps> = ({
   title,
   description,
   onClickCard,
-  onAction,
   action,
 }) => {
-  const handleActionClick = (event: React.MouseEvent) => {
-    event.stopPropagation(); // Prevent the click event from bubbling up to the parent elements
-    if (onAction) {
-      onAction();
-    }
+  const handleDropdownSelect = (selectedOption: string) => {
+    console.log("Selected option:", selectedOption);
   };
 
   return (
@@ -36,11 +33,20 @@ const CardLarge: React.FC<CardLargeProps> = ({
           </div>
         )}
       </div>
-      {action && (
-        <div className="card-large-action">
-          <span onClick={handleActionClick}>{action}</span>
-        </div>
-      )}
+      <div className="card-large-dropdown">
+        {action && (
+          <Dropdown
+            options={[
+              "Playing",
+              "Completed",
+              "On hold",
+              "Dropped",
+              "Plan to play",
+            ]}
+            onSelectOption={handleDropdownSelect}
+          />
+        )}
+      </div>
     </div>
   );
 };

@@ -29,18 +29,20 @@ const Card: React.FC<CardProps> = ({
         {subtitle && (
           <div className="subtitle-container">
             <h2>{subtitle}</h2>
-            {action && (
-              <Dropdown
-                options={[
-                  "Playing",
-                  "Completed",
-                  "On hold",
-                  "Dropped",
-                  "Plan to play",
-                ]}
-                onSelectOption={handleDropdownSelect}
-              />
-            )}
+            <div className="dropdown-container">
+              {action && (
+                <Dropdown
+                  options={[
+                    "Playing",
+                    "Completed",
+                    "On hold",
+                    "Dropped",
+                    "Plan to play",
+                  ]}
+                  onSelectOption={handleDropdownSelect}
+                />
+              )}
+            </div>
           </div>
         )}
       </div>
