@@ -17,6 +17,12 @@
     align-items: center;
     gap: 10px;
     transition: transform 0.3s ease-in-out;
+    width: 100%; // Occupy available width
+
+    @media (max-width: 768px) {
+      flex-direction: column;
+      gap: 20px;
+    }
   }
 
   .previous,
@@ -41,6 +47,11 @@
       &:hover {
         color: $hover-color;
       }
+    }
+
+    @media (max-width: 768px) {
+      font-size: 20px;
+      padding: 10px;
     }
   }
 }
